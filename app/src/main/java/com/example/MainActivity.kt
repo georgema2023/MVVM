@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         mMainViewModel.getResultObservable().observe(this, androidx.lifecycle.Observer {
             hideProgressBar()
             showResult(it)
-
         })
 
         findViewById<Button>(R.id.main_activity_button).setOnClickListener {
