@@ -19,7 +19,8 @@ jobs:
         run: chmod +x gradlew
       - run: ./gradlew lint
       - name: Lint results
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: app
+          path: app/build/reports/lint-results.html
         continue-on-error: false
