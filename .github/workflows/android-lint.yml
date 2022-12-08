@@ -6,25 +6,25 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
-      - name: setup JDK
+      - name: Setup JDK
         uses: actions/setup-java@v3
         with:
           distribution: zulu
           java-version: 11
           cache: gradle
-      - name: grant execute permission for gradlew
+      - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: run Android Lint
+      - name: Run Android Lint
         run: ./gradlew lintDebug
-      - name: setup Detekt
+      - name: Setup Detekt
         uses: peter-murray/setup-detekt@v2
         with:
           detekt_version: 1.20
-      - name: run Detekt
+      - name: Run Detekt
         run: detekt-cli --version
-      - name: upload Android Lint results
+      - name: Upload Android Lint results
         uses: actions/upload-artifact@v2
         with:
           name: Android Lint
