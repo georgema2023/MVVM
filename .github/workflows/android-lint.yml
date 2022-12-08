@@ -17,4 +17,4 @@ jobs:
           cache: gradle
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - run: ./gradlew lint --stacktrace
+      - run: bash ./gradlew lintDebug --stacktrace
