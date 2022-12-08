@@ -19,7 +19,7 @@ jobs:
         run: chmod +x gradlew
       - run: bash ./gradlew lint --stacktrace
       - name: Lint results
-        uses: action/upload-artifact@v1
+        uses: actions/upload-artifact@v1
         with:
           name: app
           path: app/build/reports/lint-results-debug.html
