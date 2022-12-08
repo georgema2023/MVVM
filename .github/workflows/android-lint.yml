@@ -17,4 +17,10 @@ jobs:
           cache: gradle
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - run: bash ./gradlew lintDebug --stacktrace
+      - run: bash ./gradlew lint --stacktrace
+      - name: Lint results
+        uses: action/upload-artifact@v1
+        with:
+          name: app
+          path: app/build/reports/lint-results-debug.html
+        continue-on-error: false
