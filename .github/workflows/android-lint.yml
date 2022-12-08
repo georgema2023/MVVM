@@ -20,5 +20,6 @@ jobs:
       - run: ./gradlew lint
       - name: Lint results
         uses: actions/upload-artifact@v1
+        with:
           name: app
         continue-on-error: false
