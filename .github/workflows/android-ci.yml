@@ -23,17 +23,17 @@ jobs:
         with:
           detekt_version: 1.22.0
       - name: Run Detekt
-        run: detekt-cli --report html:app/build/reports/detekt-results.html
+        run: detekt-cli --report html:app/build/reports/detekt-results.html --max-issues -1
       - name: Upload Android Lint results
         uses: actions/upload-artifact@v2
         with:
-          name: Android Lint
+          name: Android Lint results
           path: app/build/reports/lint-results-debug.html
         continue-on-error: false
       - name: Upload Detekt results
         uses: actions/upload-artifact@v2
         with:
-          name: Android Lint
+          name: Detekt results
           path: app/build/reports/detekt-results.html
         continue-on-error: false
 
