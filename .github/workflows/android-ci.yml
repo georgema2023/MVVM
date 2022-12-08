@@ -16,29 +16,29 @@ jobs:
           cache: gradle
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+      - name: Run Android Lint
+        run: ./gradlew lintDebug
+      - name: Setup Detekt
+        uses: peter-murray/setup-detekt@v2
+        with:
+          detekt_version: 1.22.0
+      - name: Run Detekt
+        run: detekt-cli --report html:app/build/reports/detekt-results.html --max-issues -1
       - name: Run PMD
         uses: pmd/pmd-github-action@v1
         with:
           rulesets: 'pmd_rule_set.xml'
           analyzeModifiedFilesOnly: false
-#      - name: Run Android Lint
-#        run: ./gradlew lintDebug
-#      - name: Setup Detekt
-#        uses: peter-murray/setup-detekt@v2
-#        with:
-#          detekt_version: 1.22.0
-#      - name: Run Detekt
-#        run: detekt-cli --report html:app/build/reports/detekt-results.html --max-issues -1
-#      - name: Upload Android Lint results
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: Android Lint results
-#          path: app/build/reports/lint-results-debug.html
-#        continue-on-error: false
-#      - name: Upload Detekt results
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: Detekt results
-#          path: app/build/reports/detekt-results.html
-#        continue-on-error: false
+      - name: Upload Android Lint results
+        uses: actions/upload-artifact@v2
+        with:
+          name: Android Lint results
+          path: app/build/reports/lint-results-debug.html
+        continue-on-error: false
+      - name: Upload Detekt results
+        uses: actions/upload-artifact@v2
+        with:
+          name: Detekt results
+          path: app/build/reports/detekt-results.html
+        continue-on-error: false
 
