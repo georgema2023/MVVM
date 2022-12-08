@@ -36,8 +36,7 @@ jobs:
 #          name: Detekt results
 #          path: app/build/reports/detekt-results.html
 #        continue-on-error: false
-      - name: Run Android Lint
-        uses: dvdandroid/action-android-lint@master
+      - name: detekt
+        uses: alaegin/Detekt-Action@v1.19
         with:
           github_token: ${{ secrets.TOKEN_GITHUB }}
-          lint_xml_file: app/build/reports/lint-results.xml
