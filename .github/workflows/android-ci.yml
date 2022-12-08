@@ -36,7 +36,11 @@ jobs:
 #          name: Detekt results
 #          path: app/build/reports/detekt-results.html
 #        continue-on-error: false
-      - name: detekt
-        uses: alaegin/Detekt-Action@v1.19
-        with:
-          github_token: ${{ secrets.TOKEN_GITHUB }}
+    - uses: pmd/pmd-github-action@v1
+      with:
+        rulesets: 'pmd_rule_set.xml'
+        analyzeModifiedFilesOnly: false
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: pmd-report.sarif
