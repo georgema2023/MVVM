@@ -1,25 +1,33 @@
-name: AndroidLint
+name: Android CI
 
 on: [push, pull_request]
 
 jobs:
-  android-lint:
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
-      - name: set up JDK
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup JDK
         uses: actions/setup-java@v3
         with:
           distribution: zulu
           java-version: 11
           cache: gradle
-      - name: Grant execute permission for gradlew
+      - name: grant execute permission for gradlew
         run: chmod +x gradlew
-      - run: ./gradlew lint
-      - name: Lint results
-        uses: yutailang0119/action-android-lint@v3
+      - name: run Android Lint
+        run: ./gradlew lintDebug
+      - name: setup Detekt
+        uses: peter-murray/setup-detekt@v2
         with:
-          report-path: app/build/reports/lint-results.xml
+          detekt_vision: 1.20
+      - name: run Detekt
+        run: detekt-cli --version
+      - name: upload Android Lint results
+        uses: actions/upload-artifact@v2
+        with:
+          name: Android Lint
+          path: app/build/reports/lint-results.html
         continue-on-error: false
+
