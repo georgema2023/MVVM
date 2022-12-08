@@ -21,5 +21,5 @@ jobs:
       - name: Lint results
         uses: yutailang0119/action-android-lint@v3
         with:
-          report-path: app/build/reports/lint-results.html
+          report-path: app/build/reports/lint-results.xml
         continue-on-error: false
