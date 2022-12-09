@@ -23,12 +23,12 @@ jobs:
         with:
           detekt_version: 1.22.0
       - name: Run Detekt
-        run: detekt-cli --report html:app/build/reports/detekt-results.html --max-issues -1
-      - name: Run PMD
-        uses: pmd/pmd-github-action@v1
-        with:
-          rulesets: 'pmd_rule_set.xml'
-          analyzeModifiedFilesOnly: false
+        run: detekt-cli --report html:app/build/reports/detekt-results.html --baseline config/derekt/baseline.xml
+#      - name: Run PMD
+#        uses: pmd/pmd-github-action@v1
+#        with:
+#          rulesets: 'pmd_rule_set.xml'
+#          analyzeModifiedFilesOnly: false
       - name: Upload Android Lint results
         uses: actions/upload-artifact@v2
         with:
@@ -41,4 +41,15 @@ jobs:
           name: Detekt results
           path: app/build/reports/detekt-results.html
         continue-on-error: false
-
+      - name: Upload Android Lint baseline
+        uses: actions/upload-artifact@v2
+        with:
+          name: Android Lint baseline
+          path: app/lint-baseline.xml
+        continue-on-error: false
+      - name: Upload Derekt baseline
+        uses: actions/upload-artifact@v2
+        with:
+          name: Derekt baseline
+          path: config/detekt/baseline.xml
+        continue-on-error: false
