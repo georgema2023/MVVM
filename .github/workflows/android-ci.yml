@@ -23,7 +23,7 @@ jobs:
         with:
           detekt_version: 1.22.0
       - name: Run Detekt
-        run: detekt-cli --report html:app/build/reports/detekt-results.html --baseline config/detekt/baseline.xml
+        run: detekt-cli --report html:app/build/reports/detekt-results.html --baseline config/detekt/baseline.xml --config config/detekt/detekt.yml
 #      - name: Run PMD
 #        uses: pmd/pmd-github-action@v1
 #        with:
