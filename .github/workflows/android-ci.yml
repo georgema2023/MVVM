@@ -27,7 +27,7 @@ jobs:
       - name: Run PMD
         uses: pmd/pmd-github-action@v1
         with:
-          rulesets: 'app/pmd_rule_set.xml'
+          rulesets: 'pmd_rule_set.xml'
           analyzeModifiedFilesOnly: false
       - name: Upload Android Lint results
         uses: actions/upload-artifact@v2
