@@ -33,7 +33,7 @@ android {
     lintOptions {
         abortOnError true
         textReport true
-        textReport 'stdout'
+        textOutput 'stdout'
         baseline file('lint-baseline.xml')
     }
 }
