@@ -34,6 +34,7 @@ android {
         abortOnError true
         textReport true
         textReport 'stdout'
+        baseline file('lint-baseline.xml')
     }
 }
 
