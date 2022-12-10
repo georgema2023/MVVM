@@ -14,6 +14,51 @@ buildscript {
     }
 }
 
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "1.22.0"
+}
+
+def projectSource = file(projectDir)
+def configFile = files("$rootDir/config/detekt/detekt-config.yml")
+def baselineFile = file("$rootDir/config/detekt/detekt-baseline.xml")
+def kotlinFiles = "**/*.kt"
+def resourceFiles = "**/resources/**"
+def buildFiles = "**/build/**"
+
+tasks.register("detektGenerateBaseline", io.gitlab.arturbosch.detekt.DetektCreateBaselineTask) {
+    description = "Custom DETEKT build to build baseline for all modules"
+    parallel = true
+    ignoreFailures = false
+    buildUponDefaultConfig = true
+    setSource(projectSource)
+    baseline.set(baselineFile)
+    config.setFrom(configFile)
+    include(kotlinFiles)
+    exclude(resourceFiles, buildFiles)
+}
+
+tasks.register("detektAll", io.gitlab.arturbosch.detekt.Detekt) {
+    def autoFix = project.hasProperty('detektAutoFix')
+
+    description = "Custom DETEKT build for all modules"
+    parallel = true
+    ignoreFailures = false
+    autoCorrect = autoFix
+//    buildUponDefaultConfig = true
+    setSource(projectSource)
+//    baseline.set(baselineFile)
+    config.setFrom(configFile)
+    include(kotlinFiles)
+    exclude(resourceFiles, buildFiles)
+    reports {
+        html.enabled = true
+        xml.enabled = false
+        txt.enabled = false
+        sarif.enabled = false
+        md.enabled = false
+    }
+}
+
 allprojects {
     repositories {
         google()

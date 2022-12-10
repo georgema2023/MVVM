@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>EmptyDefaultConstructor:MainViewModel.kt$MainViewModel$()</ID>
+    <ID>MaxLineLength:MainActivity.kt$MainActivity.AddressAdapter$class</ID>
+    <ID>MaxLineLength:MainActivity.kt$MainActivity.AddressAdapter$holder.itemView.findViewById&lt;TextView&gt;(R.id.item_textView).text = "${mList[position].year}:${mList[position].title}"</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.example.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.mycompany.mylibrary.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.example.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.mycompany.mylibrary.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:FirstFragment.kt$com.mycompany.mylibrary.FirstFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$com.example.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$com.mycompany.mylibrary.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:MainModel.kt$com.example.model.MainModel.kt</ID>
+    <ID>NewLineAtEndOfFile:MainViewModel.kt$com.example.viewmodel.MainViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:SecondFragment.kt$com.mycompany.mylibrary.SecondFragment.kt</ID>
+    <ID>UnusedPrivateMember:MainActivity.kt$MainActivity$private val Error: String = ""</ID>
+    <ID>VariableNaming:MainActivity.kt$MainActivity$private val Error: String = ""</ID>
+    <ID>WildcardImport:ExampleInstrumentedTest.kt$import org.junit.Assert.*</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

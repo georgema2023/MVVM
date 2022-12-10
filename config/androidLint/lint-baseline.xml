@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="5" by="lint 4.1.1" client="gradle" variant="debug" version="4.1.1">
+
+    <issue
+        id="InconsistentLayout"
+        message="The id &quot;main_activity_button&quot; in layout &quot;activity_main&quot; is missing from the following layout configurations:  (present in layout)"
+        errorLine1="        android:id=&quot;@+id/main_activity_button&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="23"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InconsistentLayout"
+        message="The id &quot;fab&quot; in layout &quot;activity_main&quot; is missing from the following layout configurations:  (present in layout)"
+        errorLine1="        android:id=&quot;@+id/fab&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="..\mylibrary\src\main\res\layout\activity_main.xml"
+            line="25"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InconsistentLayout"
+        message="The id &quot;main_activity_recyclerView&quot; in layout &quot;activity_main&quot; is missing from the following layout configurations:  (present in layout)"
+        errorLine1="        android:id=&quot;@+id/main_activity_recyclerView&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="36"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InconsistentLayout"
+        message="The id &quot;main_activity_progress_bar&quot; in layout &quot;activity_main&quot; is missing from the following layout configurations:  (present in layout)"
+        errorLine1="        android:id=&quot;@+id/main_activity_progress_bar&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="49"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        errorLine1="        targetSdkVersion 32"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="12"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        errorLine1="        targetSdkVersion 32"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="13"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.7.0 is available: 1.9.0"
+        errorLine1="    implementation &apos;androidx.core:core-ktx:1.7.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="38"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.6.1 is available: 1.7.0"
+        errorLine1="    implementation &apos;com.google.android.material:material:1.6.1&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="40"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin:kotlin-stdlib than 1.7.10 is available: 1.7.21"
+        errorLine1="    implementation &quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="47"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.8.0 is available: 1.9.0"
+        errorLine1="    implementation &apos;androidx.core:core-ktx:1.8.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="48"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.appcompat:appcompat than 1.4.2 is available: 1.5.1"
+        errorLine1="    implementation &apos;androidx.appcompat:appcompat:1.4.2&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="49"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.6.1 is available: 1.7.0"
+        errorLine1="    implementation &apos;com.google.android.material:material:1.6.1&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="50"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.3 is available: 1.1.4"
+        errorLine1="    androidTestImplementation &apos;androidx.test.ext:junit:1.1.3&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="53"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.4.0 is available: 3.5.0"
+        errorLine1="    androidTestImplementation &apos;androidx.test.espresso:espresso-core:3.4.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="54"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDynamicVersion"
+        message="Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (junit:junit:4.+)"
+        errorLine1="    testImplementation &apos;junit:junit:4.+&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="52"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ExtraText"
+        message="Unexpected text found in layout file: &quot;/>&quot;"
+        errorLine1=""
+        errorLine2="        ^">
+        <location
+            file="src\main\res\layout\fragment_first.xml"
+            line="24"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="AllowBackup"
+        message="On SDK version 23 and up, your app data will be automatically backed up and restored on app install. Consider adding the attribute `android:fullBackupContent` to specify an `@xml` resource which configures which files to backup. More info: https://developer.android.com/training/backup/autosyncapi.html"
+        errorLine1="    &lt;application"
+        errorLine2="     ~~~~~~~~~~~">
+        <location
+            file="src\main\AndroidManifest.xml"
+            line="5"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`"
+        errorLine1="    &lt;EditText"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="9"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="    &lt;EditText"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="9"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="    &lt;com.google.android.material.floatingactionbutton.FloatingActionButton"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="24"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="        findViewById&lt;TextView>(R.id.detail_rating).text = &quot;${Constants.RATING}: ${bundle?.getString(Constants.RATING)}&quot;"
+        errorLine2="                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\example\DetailActivity.kt"
+            line="13"
+            column="59"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="        findViewById&lt;TextView>(R.id.detail_title).text = &quot;${Constants.TITLE}: ${bundle?.getString(Constants.TITLE)}&quot;"
+        errorLine2="                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\example\DetailActivity.kt"
+            line="14"
+            column="58"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="        findViewById&lt;TextView>(R.id.detail_year).text = &quot;${Constants.YEAR}: ${bundle?.getString(Constants.YEAR)}&quot;"
+        errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\example\DetailActivity.kt"
+            line="15"
+            column="57"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="        findViewById&lt;TextView>(R.id.detail_date).text = &quot;${Constants.DATE}: ${bundle?.getString(Constants.DATE)}&quot;"
+        errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\example\DetailActivity.kt"
+            line="16"
+            column="57"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="            holder.itemView.findViewById&lt;TextView>(R.id.item_textView).text = &quot;${mList[position].year}:${mList[position].title}&quot;"
+        errorLine2="                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\example\MainActivity.kt"
+            line="76"
+            column="79"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Please enter full or part of a movie name&quot;, should use `@string` resource"
+        errorLine1="        android:hint=&quot;Please enter full or part of a movie name&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="16"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;FIND&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;FIND&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="29"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;item description&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;item description&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\item.xml"
+            line="13"
+            column="9"/>
+    </issue>
+
+</issues>

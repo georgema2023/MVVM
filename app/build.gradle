@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example"
-        minSdkVersion 16
-        targetSdkVersion 31
+        minSdkVersion 21
+        targetSdkVersion 32
         versionCode 1
         versionName "1.0"
 
@@ -31,10 +31,14 @@ android {
         jvmTarget = '1.8'
     }
     lintOptions {
-        abortOnError true
+        checkDependencies true
+        abortOnError false
         textReport true
-        textReport 'stdout'
-        baseline file('lint-baseline.xml')
+        textOutput 'stdout'
+        baseline file("$rootDir/config/androidLint/lint-baseline.xml")
+        htmlReport true
+        htmlOutput file("$rootDir/build/reports/androidLint/android-lint-results.html")
+        xmlReport false
     }
 }
 
@@ -48,4 +52,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation project(':mylibrary')
 }
