@@ -23,7 +23,7 @@ jobs:
 #        with:
 #          detekt_version: 1.22.0
 #      - name: Run Detekt
-#        run: detekt-cli --report html:app/build/reports/detekt-results.html --baseline config/detekt/baseline.xml --config config/detekt/detekt.yml
+#        run: detekt-cli --report html:app/build/reports/detekt-results.html --baseline config/detekt/detekt-baseline.xml --config config/detekt/detekt.yml
       - name: Run Detekt
         run: ./gradlew detektAll
 #      - name: Run PMD
@@ -35,23 +35,11 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Android Lint results
-          path: app/build/reports/lint-results-debug.html
+          path: build/reports/androidLint/android-lint-results.html
         continue-on-error: false
       - name: Upload Detekt results
         uses: actions/upload-artifact@v2
         with:
           name: Detekt results
-          path: app/build/reports/detekt-results.html
-        continue-on-error: false
-      - name: Upload Android Lint baseline
-        uses: actions/upload-artifact@v2
-        with:
-          name: Android Lint baseline
-          path: app/lint-baseline.xml
-        continue-on-error: false
-      - name: Upload Derekt baseline
-        uses: actions/upload-artifact@v2
-        with:
-          name: Derekt baseline
-          path: config/detekt/baseline.xml
+          path: build/reports/detekt/detekt-results.html
         continue-on-error: false

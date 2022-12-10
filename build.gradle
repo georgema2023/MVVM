@@ -19,8 +19,8 @@ plugins {
 }
 
 def projectSource = file(projectDir)
-def configFile = files("$rootDir/config/detekt/detekt.yml")
-def baselineFile = file("$rootDir/config/detekt/baseline.xml")
+def configFile = files("$rootDir/config/detekt/detekt-results.yml")
+def baselineFile = file("$rootDir/config/detekt/detekt-baseline.xml")
 def kotlinFiles = "**/*.kt"
 def resourceFiles = "**/resources/**"
 def buildFiles = "**/build/**"
@@ -46,7 +46,7 @@ tasks.register("detektAll", io.gitlab.arturbosch.detekt.Detekt) {
     autoCorrect = autoFix
 //    buildUponDefaultConfig = true
     setSource(projectSource)
-    baseline.set(baselineFile)
+//    baseline.set(baselineFile)
     config.setFrom(configFile)
     include(kotlinFiles)
     exclude(resourceFiles, buildFiles)

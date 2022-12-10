@@ -37,7 +37,7 @@ android {
         textOutput 'stdout'
         baseline file("$rootDir/config/androidLint/lint-baseline.xml")
         htmlReport true
-        htmlOutput file("$rootDir/build/reports/androidLint/android-lint.html")
+        htmlOutput file("$rootDir/build/reports/androidLint/android-lint-results.html")
         xmlReport false
     }
 }
