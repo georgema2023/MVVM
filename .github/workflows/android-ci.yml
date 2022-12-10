@@ -23,7 +23,7 @@ jobs:
 #        with:
 #          detekt_version: 1.22.0
 #      - name: Run Detekt
-#        run: detekt-cli --report html:app/build/reports/detekt-results.html --baseline config/detekt/detekt-baseline.xml --config config/detekt/detekt.yml
+#        run: detekt-cli --report html:app/build/reports/detekt-results.html --baseline config/detekt/detekt-baseline.xml --config config/detekt/detekt-config.yml
       - name: Run Detekt
         run: ./gradlew detektAll
 #      - name: Run PMD
@@ -41,5 +41,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Detekt results
-          path: build/reports/detekt/detekt-results.html
+          path: build/reports/detekt/detekt.html
         continue-on-error: false

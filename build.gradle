@@ -19,7 +19,7 @@ plugins {
 }
 
 def projectSource = file(projectDir)
-def configFile = files("$rootDir/config/detekt/detekt-results.yml")
+def configFile = files("$rootDir/config/detekt/detekt-config.yml")
 def baselineFile = file("$rootDir/config/detekt/detekt-baseline.xml")
 def kotlinFiles = "**/*.kt"
 def resourceFiles = "**/resources/**"
