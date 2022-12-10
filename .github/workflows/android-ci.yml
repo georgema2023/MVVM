@@ -1,0 +1,58 @@
+name: Android CI
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  lint:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 11
+          cache: gradle
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+#      - name: Run Android Lint
+#        run: ./gradlew app:lintDebug
+      - name: Run Detekt
+        run: ./gradlew detektAll
+#      - name: Run PMD
+#        uses: pmd/pmd-github-action@v1
+#        with:
+#          rulesets: 'pmd_rule_set.xml'
+#          analyzeModifiedFilesOnly: false
+#      - name: Upload Android Lint results
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: Android Lint results
+#          path: build/reports/androidLint/android-lint-results.html
+#        continue-on-error: false
+#      - name: Upload Detekt results
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: Detekt results
+#          path: build/reports/detekt/detekt.html
+#        continue-on-error: false
+      - run: cp build/reports/detekt/detekt.html build/reports/detekt/index.html
+      - name: Upload to Github Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: build/reports/detekt
+      - name: Deploy to GitHub Pages 🐙
+        id: deployment
+        uses: actions/deploy-pages@v1
+
+
+
