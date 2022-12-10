@@ -45,7 +45,7 @@ jobs:
 #          name: Detekt results
 #          path: build/reports/detekt/detekt.html
 #        continue-on-error: false
-      - run: cp build/reports/detekt/detekt.html build/reports/detekt/index.html
+      - run: mv build/reports/detekt/detekt.html build/reports/detekt/index.html
       - name: Upload to Github Pages
         uses: actions/upload-pages-artifact@v1
         with:
