@@ -45,11 +45,11 @@ jobs:
 #          name: Detekt results
 #          path: build/reports/detekt/detekt.html
 #        continue-on-error: false
-      - run: cp build/reports/detekt/detekt.html build/reports/detekt/index.html
+      - run: cp build/reports/detekt/detekt.html index.html
       - name: Upload to Github Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          path: build/reports/detekt
+          path: '.'
       - name: Deploy to GitHub Pages 🐙
         id: deployment
         uses: actions/deploy-pages@v1
