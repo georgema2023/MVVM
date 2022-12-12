@@ -28,7 +28,6 @@ jobs:
 #        run: ./gradlew app:lintDebug
       - name: Run Detekt
         run: ./gradlew detektAll
-        continue-on-error: true
 #      - name: Run PMD
 #        uses: pmd/pmd-github-action@v1
 #        with:
