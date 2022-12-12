@@ -46,16 +46,16 @@ jobs:
 #          path: build/reports/detekt/detekt.html
 #        continue-on-error: false
       - run: mv build/reports/detekt/detekt.html build/reports/detekt/index.html
-        continue-on-error: ture
+        continue-on-error: true
       - name: Upload to Github Pages
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'build/reports/detekt'
-        continue-on-error: ture
+        continue-on-error: true
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        continue-on-error: ture
+        continue-on-error: true
 
 
 
