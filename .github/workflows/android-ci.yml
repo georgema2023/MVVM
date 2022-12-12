@@ -27,7 +27,9 @@ jobs:
 #      - name: Run Android Lint
 #        run: ./gradlew app:lintDebug
       - name: Run Detekt
+        id: detektAll
         run: ./gradlew detektAll
+        continue-on-error: true
 #      - name: Run PMD
 #        uses: pmd/pmd-github-action@v1
 #        with:
@@ -53,12 +55,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      - name: Setup detekt
-        uses: peter-murray/setup-detekt@v2
-        with:
-          detekt_version: 1.20
-      - name: Run detekt
-        run: detekt-cli
+      - name: Check on failures
+        if: steps.detektAll.outcome != 'success'
+        run: exit 1
 
 
 
