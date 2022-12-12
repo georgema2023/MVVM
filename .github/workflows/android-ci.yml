@@ -28,6 +28,7 @@ jobs:
 #        run: ./gradlew app:lintDebug
       - name: Run Detekt
         run: ./gradlew detektAll
+        continue-on-error: true
 #      - name: Run PMD
 #        uses: pmd/pmd-github-action@v1
 #        with:
@@ -50,7 +51,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'build/reports/detekt'
-      - name: Deploy to GitHub Pages 🐙
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
 

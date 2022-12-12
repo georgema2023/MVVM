@@ -46,7 +46,7 @@ tasks.register("detektAll", io.gitlab.arturbosch.detekt.Detekt) {
     autoCorrect = autoFix
 //    buildUponDefaultConfig = true
     setSource(projectSource)
-    baseline.set(baselineFile)
+//    baseline.set(baselineFile)
     config.setFrom(configFile)
     include(kotlinFiles)
     exclude(resourceFiles, buildFiles)
